@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Ben's Weather Dashboard</title>
+</head>
+<main>
+    <h1>Weather Dashboard</h1>
+</main>
+
+<body>
+    <div class="main">
+            <!-- DIV #1 will Hold Search for City and all previously visited Cities -->
+            <div>
+                <h2 class="city-search">Search for a City:</h2>
+                <form>
+                    <div class="mb-3">
+                      <label for="cityWeather" class="form-city"></label>
+                      <input type="text" class="form-control" id="cityWeather" placeholder="Enter Your City">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </form>
+            </div>
+            <!-- DIV #2 Will diplay "current" searched for city -->
+            <div>
+                <h3>City and date i.e. Adelaide 25/01/2023</h3>
+            </div>
+            <!-- DIV #3 will display the "5 day forecast" -->
+            <div>
+                <h4 class="forecast">5-Day Forecast:</h4>
+                <div class="row">
+                    <!-- each column below will be appended via JavaScript for the 5x day forecase -->
+                    <div class="col">25/01/2023</div>
+                    <div class="col">26/01/2023</div>
+                    <div class="col">27/01/2023</div>
+                    <div class="col">28/01/2023</div>
+                    <div class="col">29/01/2023</div>
+                </div>
+            </div>
+    </div>
+
+    <script src="./assets/js/script.js"></script>
+</body>
+
+<footer>
+    <h5>Made with 💖 by Ben Armstrong</h3>
+</footer>
+</html>
