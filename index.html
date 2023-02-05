@@ -23,49 +23,28 @@
                 <form id="search-form" class="form">
                     <div>
                       <!-- <label for="cityWeather" class="form-city"></label> -->
-                      <input type="text" class="form-control" id="cityWeather" placeholder="Enter Your City">
+                      <input type="text" class="form-control" id="city-name" placeholder="Enter Your City">
                     </div>
-                    <button type="submit" class="btn btn-primary">Search</button>
+                    <button type="submit" class="btn btn-primary" id="submit-btn">Search</button>
                 </form>
             </div>
-            <!-- DIV #2 Will diplay "current" searched for city -->
-            <div id="searched-city">
-                <h3 id="selected-city">City and date i.e. Adelaide 25/01/2023</h3>
-            </div>
-            <!-- DIV #3 will display the "5 day forecast" -->
-            <div>
-                <h4 class="forecast">5-Day Forecast:</h4>
-                <div class="row">
-                    <!-- each column below will be appended via JavaScript for the 5x day forecase -->
-                    <div class="col" id="forecast">25/01/2023
-                    <ul>Temp:</ul>
-                    <ul>Wind:</ul>
-                    <ul>Humidity:</ul>
-                    </div>
-                    <div class="col" id="forecast">26/01/2023
-                    <ul>Temp:</ul>
-                    <ul>Wind:</ul>
-                    <ul>Humidity:</ul>
-                    </div>
-                    <div class="col" id="forecast">27/01/2023
-                    <ul>Temp:</ul>
-                    <ul>Wind:</ul>
-                    <ul>Humidity:</ul>
-                    </div>
-                    <div class="col" id="forecast">28/01/2023
-                    <ul>Temp:</ul>
-                    <ul>Wind:</ul>
-                    <ul>Humidity:</ul>
-                    </div>
-                    <div class="col" id="forecast">29/01/2023
-                    <ul>Temp:</ul>
-                    <ul>Wind:</ul>
-                    <ul>Humidity:</ul>
-                    </div>
-                </div>
-            </div>
-    </div>
 
+            <!-- DIV #2 Will diplay "current" searched for city, using BootStrap -->
+            <div id="searched-city">
+                    <!--**USER Inputted City Will Display here via JavaScript using the ID "searched-city"**-->
+            </div>
+
+            <!-- DIV #3 will display the "5 day forecast, using BootStrap" -->
+            <div id="forecast">
+                    <!--**USER Inputted City Will Display 5 Day Forecast here via JavaScript using the ID "forecast"**-->
+            </div>
+        </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+      crossorigin="anonymous"
+    ></script>
     <script src="./assets/js/script.js"></script>
 </body>
 
