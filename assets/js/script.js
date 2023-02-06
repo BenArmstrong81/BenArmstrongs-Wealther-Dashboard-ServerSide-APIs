@@ -23,7 +23,9 @@ function submitFunction(event){
     console.log(city);
     getCityElements(city);
     //make a function to save past searches to local history 
-    localStorage.setItem('cities', JSON.stringify([city]));
+    // localStorage.setItem('cities', JSON.stringify([city]));
+    SaveToLocalStorage(city);
+    searchHistory();
 }
 
 //-----------------1st Find GeolocationCoordinates by city - this is entered by user
@@ -96,7 +98,7 @@ await fetch("https://api.openweathermap.org/data/2.5/forecast?lat=" + latEl + "&
   console.table(JSON.stringify(data));
   console.log(data);
     // function to make five day forecast card
-var timeEl = data.list.filter((e) => e.dt_txt.includes('15:00:00'))
+var timeEl = data.list.filter((e) => e.dt_txt.includes('09:00:00'))
 var fiveDayEl = document.getElementById('forecast')
 if(fiveDayEl.innerHTML){
     fiveDayEl.innerHTML='';   
@@ -104,7 +106,7 @@ if(fiveDayEl.innerHTML){
 for ( var i = 0; i < timeEl.length; i++) {
     console.log(timeEl[i].main);
     var fiveDayCard = document.createElement('div')
-    fiveDayCard.classList.add('five-day-card','m-3', 'p-3' ,'border', 'rounded' ,'border-dark');
+    fiveDayCard.classList.add('five-day-card','.col-md-4', 'p-3' ,'border', 'rounded' ,'border-dark');
     var fiveDayDate = document.createElement('h3')
     fiveDayDate.innerHTML= timeEl[i].dt_txt.slice(0, 10);
     console.log(timeEl[i])
@@ -112,59 +114,46 @@ for ( var i = 0; i < timeEl.length; i++) {
     fiveDayIcon.innerHTML= '<img src="http://openweathermap.org/img/wn/' + timeEl[i].weather[0].icon + '@2x.png">';
     var fiveDayTemp = document.createElement('p');
     fiveDayTemp.innerHTML ="<b>Temperature: </b>" + Math.round(timeEl[i].main.temp *10)/10 + '°C';
-    var fiveDayTempMin = document.createElement('p');
-    fiveDayTempMin.innerHTML ="<b>Minimum Temperature: </b>" + Math.round(timeEl[i].main.temp_min *10)/10 + '°C';
-    var fiveDayTempMax = document.createElement('p');
-    fiveDayTempMax.innerHTML ="<b>Maximum Temperature: </b>" + Math.round(timeEl[i].main.temp_max *10)/10 + '°C';
     var fiveDayWind = document.createElement('p');
     fiveDayWind.innerHTML ="<b>Wind Speed: </b>" + timeEl[i].wind.speed + ' KMs PerHour';
     var fiveDayHumidity = document.createElement('p');
     fiveDayHumidity.innerHTML ="<b>Humidity: </b>" + timeEl[i].main.humidity + '%';
-    fiveDayCard.append(fiveDayDate,fiveDayIcon, fiveDayTemp, fiveDayTempMin, fiveDayTempMax, fiveDayWind, fiveDayHumidity);
+    fiveDayCard.append(fiveDayDate,fiveDayIcon, fiveDayTemp, fiveDayWind, fiveDayHumidity);
     fiveDayEl.append(fiveDayCard);
 }
 });
 }
 
-//-----------------------------Save Selected Radio Station to Local Storage
-function SaveToLocalStorage(RadioStationName, RadioUrl) {
-  if (RadioUrl == "") {
-    var error = document.getElementById("Popup_DropDown")
-    error.textContent = "Please select a Radio Station"
-    error.classList.toggle("show");
-  }
-  else {
-    var RadioStation = RadioStationName;
-    var RadioStationLink = RadioUrl;
+//-----------------------------Save Searched Cities to Local Storage
+function SaveToLocalStorage(city) {
     let save = [];
-    save = JSON.parse(localStorage.getItem('PlayList')) || [];
+    save = JSON.parse(localStorage.getItem('cities')) || [];
     console.table(save);
-    save.push([RadioStation, RadioStationLink]);
-    localStorage.setItem("PlayList", JSON.stringify(save));
-    AddPlayList();
-  }
+    if (!save.includes(city)){
+        save.push(city);   
+    }
+    localStorage.setItem("cities", JSON.stringify(save));
 }
 //-----------------------------Add Local Storage data to Left Menu Play List (favourites)
-function AddPlayList() {
+function searchHistory() {
   //localStorage.removeItem("PlayList");
-  var ul = document.querySelector('#MenuList');
+  var ul = document.querySelector('#search-history');
   var listLength = ul.children.length;
   if (listLength != 0) {
     for (i = 0; i < listLength; i++) {
       ul.removeChild(ul.children[0]);
     }
   }
-  let LocPlaylist = [];
-  LocPlaylist = JSON.parse(localStorage.getItem('PlayList'));
-  if (LocPlaylist != null) {
-    for (var i = 0; i < LocPlaylist.length; i++) {
-      var opt = LocPlaylist[i][0];
-      var val = LocPlaylist[i][1];
+  let city = [];
+  city = JSON.parse(localStorage.getItem('cities'));
+  if (city != null) {
+    for (var i = 0; i < city.length; i++) {
       var el = document.createElement('li');
-      el.textContent = opt;
-      el.val = val;
-      leftMenu.appendChild(el);
+      el.textContent = city[i];
+      ul.appendChild(el);
     }
   }
 }
 
+// Add click event listener and call the below funtion, cityName = list element that is clicked **via DIV
+// function getCityElements(cityName)

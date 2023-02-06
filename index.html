@@ -18,7 +18,7 @@
 <body>
     <div class="main">
             <!-- DIV #1 will Hold Search for City and all previously visited Cities -->
-            <div>
+            <div class="search-main">
                 <h2 class="city-search">Search for a City:</h2>
                 <form id="search-form" class="form">
                     <div>
@@ -26,6 +26,9 @@
                       <input type="text" class="form-control" id="city-name" placeholder="Enter Your City">
                     </div>
                     <button type="submit" class="btn btn-primary" id="submit-btn">Search</button>
+                    <div id="search-history">
+                        <!--**USER Inputted Cities Will Display here via JavaScript using the ID "search-history"**-->
+                    </div>
                 </form>
             </div>
 
@@ -35,11 +38,14 @@
             </div>
 
             <!-- DIV #3 will display the "5 day forecast, using BootStrap" -->
-            <div id="forecast">
-                    <!--**USER Inputted City Will Display 5 Day Forecast here via JavaScript using the ID "forecast"**-->
+            <div class="container">
+                <div class="row">
+                    <div id="forecast" class="col align-self-center p-3 mb-2 bg-dark text-white">
+                            <!--**USER Inputted City Will Display 5 Day Forecast here via JavaScript using the ID "forecast"**-->
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
     <script
       src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
       integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
