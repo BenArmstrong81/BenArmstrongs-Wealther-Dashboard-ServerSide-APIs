@@ -106,7 +106,7 @@ if(fiveDayEl.innerHTML){
 for ( var i = 0; i < timeEl.length; i++) {
     console.log(timeEl[i].main);
     var fiveDayCard = document.createElement('div')
-    fiveDayCard.classList.add('five-day-card','.col-md-4', 'p-3' ,'border', 'rounded' ,'border-dark');
+    fiveDayCard.classList.add('five-day-card','.col-md-5', 'p-3','border', 'rounded' ,'border-dark');
     var fiveDayDate = document.createElement('h3')
     fiveDayDate.innerHTML= timeEl[i].dt_txt.slice(0, 10);
     console.log(timeEl[i])

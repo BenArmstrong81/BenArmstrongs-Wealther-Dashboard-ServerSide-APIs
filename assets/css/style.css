@@ -29,18 +29,15 @@ h2 {
     float: left;
 }
 
-#searched-city{
-    width: 1450px;
-    float: right;
-    position: relative;
-    /* padding-right: 300px; */
-    
+.forcaste-container{
+flex-wrap: wrap;
+flex-direction: row;    
 }
 
 #forecast {
-    width: auto;
+    /* width: auto;
     display: flex;
-    position: relative;
+    position: relative; */
     
 }
 
