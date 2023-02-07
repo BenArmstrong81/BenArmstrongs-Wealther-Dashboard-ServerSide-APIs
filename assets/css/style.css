@@ -1,4 +1,4 @@
-:root {
+/* :root {
     font-family: 'Noto Serif', serif;
     margin: auto;
 }
@@ -7,7 +7,7 @@ h1 {
     background: rgb(47,85,120);
     background: linear-gradient(248deg, rgba(47,85,120,1) 0%, rgba(47,85,120,1) 39%, rgba(249,245,239,1) 100%);
     color: white;
-    text-align: right;
+    text-align: center;
     padding-right: 200px;
     font-size: 65px;
 }
@@ -39,11 +39,57 @@ flex-direction: row;
     display: flex;
     position: relative; */
     
-}
-
+/* } */
+/* 
 footer {
     background: rgb(47,85,120);
     background: linear-gradient(248deg, rgba(47,85,120,1) 0%, rgba(47,85,120,1) 39%, rgba(249,245,239,1) 100%);
     color: white;
     text-align: center;
+} */ */
+
+
+:root {
+    font-family: ‘Noto Serif’, serif;
+    margin: auto;
+}
+h1 {
+    background: rgb(47,85,120);
+    background: linear-gradient(248deg, rgba(47,85,120,1) 0%, rgba(47,85,120,1) 39%, rgba(249,245,239,1) 100%);
+    color: white;
+    text-align: center;
+    align-items: center;
+    margin: auto 0;
+    font-size: 65px;
+    height: 150px;
+}
+h2 {
+   font-size: 20px;
+}
+.container p{
+    width: 200px;
+}
+#submit-btn {
+    width: 100%;
+}
+
+.five-day-card {
+    background-color: rgb(47,85,120);
+}
+
+.btn {
+    width: 100%;
+}
+
+#forecast {
+    justify-content: space-between;
+}
+footer {
+    background: rgb(47,85,120);
+    background: linear-gradient(248deg, rgba(47,85,120,1) 0%, rgba(47,85,120,1) 39%, rgba(249,245,239,1) 100%);
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+    height: 50px;
+    margin-bottom: 0;
 }

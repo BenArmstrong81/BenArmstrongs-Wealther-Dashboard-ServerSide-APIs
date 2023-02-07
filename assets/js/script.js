@@ -132,17 +132,17 @@ if(fiveDayEl.innerHTML){
 for ( var i = 0; i < timeEl.length; i++) {
     console.log(timeEl[i].main);
     var fiveDayCard = document.createElement('div')
-    fiveDayCard.classList.add('five-day-card','.col-md-5', 'p-3','border', 'rounded' ,'border-dark');
+    fiveDayCard.classList.add('five-day-card', 'px-5', 'py-3');
     var fiveDayDate = document.createElement('h3')
     fiveDayDate.innerHTML= timeEl[i].dt_txt.slice(0, 10);
     console.log(timeEl[i])
-    var fiveDayIcon = document.createElement('p');
+    var fiveDayIcon = document.createElement('div');
     fiveDayIcon.innerHTML= '<img src="http://openweathermap.org/img/wn/' + timeEl[i].weather[0].icon + '@2x.png">';
-    var fiveDayTemp = document.createElement('p');
-    fiveDayTemp.innerHTML ="<b>Temperature: </b>" + Math.round(timeEl[i].main.temp *10)/10 + '°C';
-    var fiveDayWind = document.createElement('p');
-    fiveDayWind.innerHTML ="<b>Wind Speed: </b>" + timeEl[i].wind.speed + ' KMs PerHour';
-    var fiveDayHumidity = document.createElement('p');
+    var fiveDayTemp = document.createElement('div');
+    fiveDayTemp.innerHTML ="<b>Temp: </b>" + Math.round(timeEl[i].main.temp *10)/10 + '°C';
+    var fiveDayWind = document.createElement('div');
+    fiveDayWind.innerHTML ="<b>Wind: </b>" + timeEl[i].wind.speed + ' KMs/H';
+    var fiveDayHumidity = document.createElement('div');
     fiveDayHumidity.innerHTML ="<b>Humidity: </b>" + timeEl[i].main.humidity + '%';
     fiveDayCard.append(fiveDayDate,fiveDayIcon, fiveDayTemp, fiveDayWind, fiveDayHumidity);
     fiveDayEl.append(fiveDayCard);

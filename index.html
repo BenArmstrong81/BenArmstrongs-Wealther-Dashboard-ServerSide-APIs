@@ -17,10 +17,10 @@
 </main>
 
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid mt-3">
         <div class="row">
             <!-- DIV #1 will Hold Search for City and all previously visited Cities -->
-            <div class="col-1 search-main">
+            <div class="col-2 search-main">
                 <h2 class="city-search">Search for a City:</h2>
                 <form id="search-form" class="form">
                     <div>
@@ -35,21 +35,20 @@
             </div>
 
             <!-- DIV #2 Will diplay "current" searched for city, using BootStrap -->
-            <section class="col-8">
+            <div class="col-10">
             <div id="searched-city">
                     <!--**USER Inputted City Will Display here via JavaScript using the ID "searched-city"**-->
             </div>
-
+            <h3>5 Day Forecast:</h3>
             <!-- DIV #3 will display the "5 day forecast, using BootStrap" -->
             <div class="container">
-                <h3>5 Day Forecast:</h3>
                 <div>
-                    <div id="forecast" class="is-flex p-3 bg-dark text-white forcaste-container">
+                    <div id="forecast" class="d-flex text-white forcaste-container">
                             <!--**USER Inputted City Will Display 5 Day Forecast here via JavaScript using the ID "forecast"**-->
                     </div>
                 </div>
             </div>
-            </section>
+        </div>
         </div>
         </div>
     <script
