@@ -5,7 +5,7 @@ const apiKey = "3600fb05ffbd82c86b36fdbf2ee15d74";
 
 //-----------------3x API URL's needed are:
 // 1) Direct geocoding - Coordinates by location name URL:
-// http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={API key}
+// https://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={API key}
 // 2) Current Weather:
 // https://api.openweathermap.org/data/2.5/weather?lat=" + latEl + "&lon=" + lonEl + "&units=metric&appid=" + apiKey;
 // 3) 5 day forescast API URL:
@@ -58,7 +58,7 @@ function capitalizeWords(cityName){
 async function getCityElements(cityName){
 var latEl;
 var lonEl;
-await fetch("http://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&appid=" + apiKey + "&limit=5")
+await fetch("https://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&appid=" + apiKey + "&limit=5")
 .then(function (response) {
     return response.json();
   })
@@ -96,7 +96,7 @@ await fetch("https://api.openweathermap.org/data/2.5/weather?lat=" + latEl + "&l
   var currentWeatherCardTitle = document.createElement('h2');
   currentWeatherCardTitle.innerHTML= "<b>Current Weather In: " + cityName + dayjs().format(' dddd, DD-MM-YYYY') + '</b>';
   var currentIcon = document.createElement('p');
-  currentIcon.innerHTML= '<img src="http://openweathermap.org/img/wn/' + data.weather[0].icon + '@2x.png">';
+  currentIcon.innerHTML= '<img src="https://openweathermap.org/img/wn/' + data.weather[0].icon + '@2x.png">';
   var currentTemp= document.createElement('p');
   currentTemp.innerHTML='<b>Current Temperature: </b>' + Math.round(data.main.temp *10)/10 + '°C';
   var feelsLike = document.createElement('p');
@@ -137,7 +137,7 @@ for ( var i = 0; i < timeEl.length; i++) {
     fiveDayDate.innerHTML= timeEl[i].dt_txt.slice(0, 10);
     console.log(timeEl[i])
     var fiveDayIcon = document.createElement('div');
-    fiveDayIcon.innerHTML= '<img src="http://openweathermap.org/img/wn/' + timeEl[i].weather[0].icon + '@2x.png">';
+    fiveDayIcon.innerHTML= '<img src="https://openweathermap.org/img/wn/' + timeEl[i].weather[0].icon + '@2x.png">';
     var fiveDayTemp = document.createElement('div');
     fiveDayTemp.innerHTML ="<b>Temp: </b>" + Math.round(timeEl[i].main.temp *10)/10 + '°C';
     var fiveDayWind = document.createElement('div');
