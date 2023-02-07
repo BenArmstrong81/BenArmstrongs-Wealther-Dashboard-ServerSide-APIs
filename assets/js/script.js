@@ -17,10 +17,24 @@ var onSubmit = document.querySelector('#submit-btn');
 console.log(onSubmit);
 onSubmit.addEventListener('click', submitFunction);
 
+init();
+
+function init(){
+  searchHistory();
+}
+
 function submitFunction(event){
     event.preventDefault();
-    var city = document.getElementById('city-name').value;
-    console.log(city);
+
+    var cityEl = document.getElementById('city-name');
+
+    var city = cityEl.value;
+
+    if(city.trim() === '') return;
+
+    cityEl.value = '';
+
+    //console.log(city);
     getCityElements(city);
     //make a function to save past searches to local history 
     // localStorage.setItem('cities', JSON.stringify([city]));
@@ -157,3 +171,19 @@ function searchHistory() {
 
 // Add click event listener and call the below funtion, cityName = list element that is clicked **via DIV
 // function getCityElements(cityName)
+
+var cityListContEl = document.querySelector('#search-history');
+cityListContEl.addEventListener('click', processSelectedCity);
+
+function processSelectedCity(event){
+
+  event.preventDefault();
+
+  var cityNameEl = event.target;
+
+  if(cityNameEl.nodeName.toLowerCase() !== 'li') return;
+
+  var cityName = cityNameEl.textContent;
+
+  getCityElements(cityName);
+}
