@@ -57,12 +57,12 @@ I had to create a HTML, CSS, JavaScript and README file from scratch along with 
 N/A
 
 # Usage
-To use and view this challenge please use this the following link to access the deployed website: "https://benarmstrong81.github.io/Ben-Armstrong-Third-Party-APIs/" 
+To use and view this challenge please use this the following link to access the deployed website: "https://benarmstrong81.github.io/BenArmstrongs-Wealther-Dashboard-ServerSide-APIs/" 
 
-My JavaScript Work Day Scheduler changes color to show either past, present or future time blocks within the calander. You can also add multiple lines of text by hitting enter.
+Using JavaScript, when a user enters their city the current weather and 5 day forecast will automatically update. The previously searched cities will also display on the left ensuring quick and easy access.
 The following image shows the web application's appearance:
 
-![My Web Development Portfolio webpage includes a navigation bar, a professional head shot image, multiple links (placeholders at this stage) to projects completed within the UniSA Full Stack Web Development course, and working links to contact me - even download an updated resume.](./images/BenArmstrong-Third-Party-Web-API-Challenge-WorkingScreenShot.png)
+![My Web Development Portfolio webpage includes a navigation bar, a professional head shot image, multiple links (placeholders at this stage) to projects completed within the UniSA Full Stack Web Development course, and working links to contact me - even download an updated resume.](./assets/images/Bens-WeatherApp-Deployed-ScreenShot.png)
 
 # Credits
 With special thanks to the UniSA Full Stack Web Development Class.
