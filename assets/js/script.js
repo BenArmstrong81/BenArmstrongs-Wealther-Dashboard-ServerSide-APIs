@@ -32,6 +32,8 @@ function submitFunction(event){
 
     if(city.trim() === '') return;
 
+    city = capitalizeWords(city);
+
     cityEl.value = '';
 
     //console.log(city);
@@ -40,6 +42,16 @@ function submitFunction(event){
     // localStorage.setItem('cities', JSON.stringify([city]));
     SaveToLocalStorage(city);
     searchHistory();
+}
+
+//Capitalizes first letter in each word.
+function capitalizeWords(cityName){
+  let wordArray = cityName.split(' ');
+  for (let i = 0; i < wordArray.length; i++) {
+      //Makes the first letter upper case.
+      wordArray[i] = wordArray[i].charAt(0).toUpperCase() + wordArray[i].substring(1);
+  }
+  return wordArray.join(' ');
 }
 
 //-----------------1st Find GeolocationCoordinates by city - this is entered by user
@@ -163,6 +175,7 @@ function searchHistory() {
   if (city != null) {
     for (var i = 0; i < city.length; i++) {
       var el = document.createElement('li');
+      el.className = 'btn btn-secondary mt-3';
       el.textContent = city[i];
       ul.appendChild(el);
     }
